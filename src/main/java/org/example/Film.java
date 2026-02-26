@@ -2,21 +2,19 @@ package org.example;
 
 import com.opencsv.bean.CsvBindByName;
 import com.opencsv.bean.CsvCustomBindByName;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
 
-import java.time.Instant;
+import org.example.converter.GenreCsvConverter;
+import org.example.converter.LocalDateMultiCsvConverter;
+import org.example.converter.LanguagesCsvConverter;
+
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Objects;
 
-//@Getter
-//@Setter
-//@EqualsAndHashCode
 public class Film {
 
-    public Film() {}
+    public Film() {
+    }
 
     @CsvBindByName(column = "Title")
     private String title;
@@ -33,11 +31,8 @@ public class Film {
     @CsvBindByName(column = "IMDB Score")
     private float imdbScore;
 
-    @CsvCustomBindByName(column = "Language", converter = SlashInStringCsvConverter.class)
+    @CsvCustomBindByName(column = "Language", converter = LanguagesCsvConverter.class)
     private List<String> languages;
-
-//    -----------------------------------------------------
-
 
     public String getTitle() {
         return title;
@@ -112,5 +107,4 @@ public class Film {
                 ", languages=" + languages +
                 '}';
     }
-
 }

@@ -1,10 +1,10 @@
 package org.example.task;
 
-public interface Calculus<T, U> {
+import org.example.Film;
 
-    void calculate(T t);
+public interface Calculus<R> {
 
-    U getResult();
+    void calculate(Film film);
 
-    void print();
+    R getResult();
 }

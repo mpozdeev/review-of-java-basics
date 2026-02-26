@@ -1,4 +1,4 @@
-package org.example;
+package org.example.converter;
 
 import com.opencsv.bean.AbstractBeanField;
 
@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class SlashInStringCsvConverter extends AbstractBeanField<String, List<String>> {
+public class LanguagesCsvConverter extends AbstractBeanField<String, List<String>> {
 
     @Override
     protected List<String> convert(String value) {

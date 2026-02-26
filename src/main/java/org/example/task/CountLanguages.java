@@ -5,12 +5,10 @@ import org.example.Film;
 import java.util.HashMap;
 import java.util.Map;
 
-public class CountLanguages implements Calculus<Film, Map<String, Long>> {
+public class CountLanguages implements Calculus<Map<String, Long>> {
 
-    private Map<String, Long> countLanguages = new HashMap<>();
+    private final Map<String, Long> countLanguages = new HashMap<>();
 
-    public CountLanguages() {
-    }
     @Override
     public void calculate(Film film) {
         for (String language : film.getLanguages()) {
@@ -21,11 +19,5 @@ public class CountLanguages implements Calculus<Film, Map<String, Long>> {
     @Override
     public Map<String, Long> getResult() {
         return countLanguages;
-    }
-
-    @Override
-    public void print() {
-        countLanguages.entrySet()
-                .forEach(System.out::println);
     }
 }
